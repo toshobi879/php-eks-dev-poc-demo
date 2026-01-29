@@ -1,7 +1,7 @@
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "billow-poc-terraform-state-prod"
+    bucket = "billow-terraform-state-prod"
     key    = "vpc/terraform.tfstate"
     region = "us-west-1"
   }
@@ -10,7 +10,7 @@ data "terraform_remote_state" "vpc" {
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    bucket = "billow-poc-terraform-state-prod"
+    bucket = "billow-terraform-state-prod"
     key    = "eks/terraform.tfstate"
     region = "us-west-1"
   }
