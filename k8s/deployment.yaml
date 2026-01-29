@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: office-locator
+  namespace: php-poc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: office-locator
+  template:
+    metadata:
+      labels:
+        app: office-locator
+    spec:
+      containers:
+        - name: office-locator
+          image: REPLACED_BY_CICD   # <-- GitHub Actions will update this
+          ports:
+            - containerPort: 80
+          env:
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_HOST
+
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_NAME
+
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_USER
+
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_PASS
