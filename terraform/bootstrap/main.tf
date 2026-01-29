@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "terraform_state" {
 
   tags = {
     Name        = var.backend_bucket_name
-    Purpose     = "terraform-backend"
+    Purpose     = "terraform-backend-dev"
   }
 }
 
@@ -66,7 +66,7 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
 
 resource "aws_iam_policy" "terraform_backend_policy" {
-  name        = "terraform-backend-access"
+  name        = "terraform-backend-access-dev"
   description = "Allow Terraform to access S3 backend and DynamoDB lock table"
 
   policy = jsonencode({
