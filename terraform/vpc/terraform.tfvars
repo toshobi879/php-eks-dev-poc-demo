@@ -3,7 +3,7 @@ project_name = "caltrans-eks-php"
 
 vpc_cidr = "10.20.0.0/16"
 
-azs = ["us-west-2a", "us-west-2b"]
+azs = ["us-west-1a", "us-west-1b"]
 
 private_subnets = ["10.20.1.0/24", "10.20.2.0/24"]
 public_subnets  = ["10.20.11.0/24", "10.20.12.0/24"]
