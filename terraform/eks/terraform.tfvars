@@ -1,6 +1,6 @@
-aws_region = "us-west-1"
+aws_region = "us-west-2"
 
-project_name = "caltrans-eks-php"
+project_name = "caltrans-eks-php-prod"
 
 eks_cluster_version = "1.33"
 
