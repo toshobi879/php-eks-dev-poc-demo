@@ -3,7 +3,7 @@ data "terraform_remote_state" "vpc" {
   config = {
     bucket = "billow-terraform-state-prod"
     key    = "vpc/terraform.tfstate"
-    region = "us-west-1"
+    region = "us-west-2"
   }
 }
 
