@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: us-west-1
+  AWS_REGION: us-west-2
 
 jobs:
 
@@ -32,12 +32,12 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-1
+          aws-region: us-west-2
 
       - name: Update kubeconfig
         run: |
           aws eks update-kubeconfig \
-            --region us-west-1 \
+            --region us-west-2 \
             --name ${{ vars.CLUSTER_NAME }}
 
       - name: Delete namespace
@@ -57,7 +57,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-1
+          aws-region: us-west-2
 
       - run: |
           aws rds modify-db-instance \
@@ -80,7 +80,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-1
+          aws-region: us-west-2
 
       - run: echo "TF_VAR_db_password=${{ secrets.TF_VAR_DB_PASSWORD }}" >> $GITHUB_ENV
 
@@ -105,7 +105,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-1
+          aws-region: us-west-2
 
       - uses: hashicorp/setup-terraform@v3
 
@@ -131,7 +131,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-1
+          aws-region: us-west-2
 
       - run: |
           aws ecr delete-repository \
@@ -152,7 +152,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-1
+          aws-region: us-west-2
 
       - uses: hashicorp/setup-terraform@v3
 
