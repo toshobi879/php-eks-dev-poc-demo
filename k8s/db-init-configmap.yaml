@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: db-init-sql
-  namespace: php-poc
+  namespace: php-poc-prod
 data:
   init.sql: |
     DROP TABLE IF EXISTS offices;
