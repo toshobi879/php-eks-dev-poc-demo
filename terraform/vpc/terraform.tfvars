@@ -1,9 +1,9 @@
-aws_region   = "us-west-1"
-project_name = "caltrans-eks-php"
+aws_region   = "us-west-2"
+project_name = "caltrans-eks-php-prod"
 
-vpc_cidr = "10.20.0.0/16"
+vpc_cidr = "10.21.0.0/16"
 
 azs = ["us-west-1a", "us-west-1b"]
 
-private_subnets = ["10.20.1.0/24", "10.20.2.0/24"]
-public_subnets  = ["10.20.11.0/24", "10.20.12.0/24"]
+private_subnets = ["10.21.1.0/24", "10.21.2.0/24"]
+public_subnets  = ["10.21.11.0/24", "10.21.12.0/24"]
